@@ -1,7 +1,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/ui'],
+  modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/ui', '@vueuse/nuxt'],
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
