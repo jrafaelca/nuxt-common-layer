@@ -1,4 +1,5 @@
-// eslint-disable-next-line no-undef
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/ui'],
   devtools: { enabled: true },
@@ -8,6 +9,7 @@ export default defineNuxtConfig({
       appName: process.env.APP_NAME || 'NuxtCommonLayer',
       appUrl: process.env.APP_URL || 'http://localhost:3000',
       appLocale: process.env.APP_LOCALE || 'en',
+      appCurrency: process.env.APP_CURRENCY || 'USD',
     },
   },
   future: {
