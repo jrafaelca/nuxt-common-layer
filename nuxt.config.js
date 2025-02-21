@@ -1,7 +1,8 @@
 // eslint-disable-next-line no-undef
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxtjs/i18n'],
+  modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/ui'],
   devtools: { enabled: true },
+  css: ['~/assets/css/main.css'],
   runtimeConfig: {
     public: {
       appName: process.env.APP_NAME || 'NuxtCommonLayer',
