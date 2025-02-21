@@ -1,3 +1,9 @@
 {
-
+  "common": {
+    "label": {
+      "select_all": "Select All",
+      "select_row": "Select Row",
+      "pagination_showing": "Showing {from} to {to} of {total} entries"
+    }
+  }
 }
