@@ -115,24 +115,31 @@ function isRowSelected(row) {
 
 function toggleSelectAllRows(value) {
   const updatedSelection = value
-    ? { ...props.selectedRows, ...Object.fromEntries(props.data.map(row => [row.id, value])) }
-    : Object.fromEntries(Object.entries(props.selectedRows).filter(([key]) =>
-        !props.data.some(row => row.id === key),
-      ))
+    ? Object.fromEntries(props.data.map(row => [row.id, true]))
+    : {}
 
-  emit('update:selectedRows', updatedSelection)
+  emit('update:selectedRows', { ...updatedSelection })
 }
 
 function toggleRowSelection(row) {
-  const updatedSelection = props.selectedRows[row.original.id]
-    ? Object.fromEntries(Object.entries(props.selectedRows).filter(([key]) => key !== row.original.id))
-    : { ...props.selectedRows, [row.original.id]: true }
+  const updatedSelection = { ...props.selectedRows }
 
-  emit('update:selectedRows', updatedSelection)
+  if (updatedSelection[row.original.id]) {
+    updatedSelection[row.original.id] = undefined
+  }
+  else {
+    updatedSelection[row.original.id] = true
+  }
+
+  const cleanedSelection = Object.fromEntries(
+    Object.entries(updatedSelection).filter(([_, value]) => value !== undefined),
+  )
+
+  emit('update:selectedRows', { ...cleanedSelection })
 }
 
 function handleChangePage(page) {
-  navigateTo({ query: { ...route.query, page } })
+  navigateTo({ query: { ...route.query, page } }, { replace: true })
 }
 
 function handleSort(value) {
