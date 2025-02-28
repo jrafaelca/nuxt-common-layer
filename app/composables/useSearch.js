@@ -1,4 +1,4 @@
-export function useSearch(defaultQueryKey = 'term') {
+export function useSearch(defaultQueryKey = 'filter[q]') {
   const route = useRoute()
   const router = useRouter()
 

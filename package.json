@@ -2,23 +2,39 @@
   "name": "nuxt-common-layer",
   "private": true,
   "type": "module",
+  "version": "0.0.0",
+  "main": "./nuxt.config.js",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "build": "nuxt build .playground",
+    "dev": "nuxt dev .playground",
+    "dev:prepare": "nuxt prepare .playground",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.1.0",
-    "@nuxt/ui": "^3.0.0-alpha.13",
+    "@nuxt/ui": "3.0.0-beta.2",
     "@nuxtjs/i18n": "^9.2.1",
     "@vueuse/nuxt": "^12.7.0",
-    "eslint": "^9.20.1",
-    "nuxt": "^3.15.4",
-    "vue": "latest",
-    "vue-router": "latest"
-  }
+    "nuxt": "^3.15.4"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.27",
+    "@nuxt/eslint": "^1.1.0",
+    "eslint": "^9.21.0",
+    "typescript": "^5.8.2"
+  },
+  "overrides": {
+    "tailwindcss": "4.0.7",
+    "@tailwindcss/postcss": "4.0.7",
+    "@tailwindcss/vite": "4.0.7"
+  },
+  "resolutions": {
+    "tailwindcss": "4.0.7",
+    "@tailwindcss/postcss": "4.0.7",
+    "@tailwindcss/vite": "4.0.7"
+  },
+  "packageManager": "pnpm@10.5.0+sha512.11106a5916c7406fe4b8cb8e3067974b8728f47308a4f5ac5e850304afa6f57e2847d7950dfe78877d8d36bfb401d381c4215db3a4c3547ffa63c14333a6fa51"
 }
