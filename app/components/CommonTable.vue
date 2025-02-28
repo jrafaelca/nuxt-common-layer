@@ -114,11 +114,21 @@ function isRowSelected(row) {
 }
 
 function toggleSelectAllRows(value) {
-  const updatedSelection = value
-    ? Object.fromEntries(props.data.map(row => [row.id, true]))
-    : {}
+  let updatedSelection = { ...props.selectedRows }
 
-  emit('update:selectedRows', { ...updatedSelection })
+  if (value) {
+    props.data.forEach(row => {
+      updatedSelection[row.id] = true
+    })
+  } else {
+    updatedSelection = Object.fromEntries(
+        Object.entries(updatedSelection).filter(([id]) =>
+            !props.data.some(row => row.id === id)
+        )
+    )
+  }
+
+  emit('update:selectedRows', updatedSelection)
 }
 
 function toggleRowSelection(row) {
