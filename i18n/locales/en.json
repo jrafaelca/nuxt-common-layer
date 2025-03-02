@@ -1,9 +1,10 @@
 {
   "common": {
     "label": {
-      "select_all": "Select All",
-      "select_row": "Select Row",
-      "pagination_showing": "Showing {from} to {to} of {total} entries"
+      "pagination_showing": "Showing {from} to {to} of {total} records",
+      "select_all": "Select all",
+      "select_row": "Select row",
+      "selected_items": "{count} item selected | {count} items selected"
     }
   }
 }
